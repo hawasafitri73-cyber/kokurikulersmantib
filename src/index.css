@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  --font-retro: 'Space Grotesk', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --color-retro-blue: #4169E1;
+  --color-sky-blue: #A7D8F0;
+  --color-retro-pink: #F4A6C1;
+  --color-soft-pink: #FCE4EC;
+  --color-navy: #24345B;
+  --color-soft-gray: #F4F6FA;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: #24345B;
+}
+
+h1, h2, h3, .font-retro {
+  font-family: var(--font-retro);
+}
+
+/* Retro modern background accents */
+.bg-retro-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(167, 216, 240, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(167, 216, 240, 0.25) 1px, transparent 1px);
+}
+
+.bg-retro-dots {
+  background-image: radial-gradient(rgba(65, 105, 225, 0.18) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+}
+
+/* Retro shadow border effect */
+.retro-card {
+  background-color: #ffffff;
+  border: 1.5px solid #A7D8F0;
+  box-shadow: 3px 3px 0px rgba(65, 105, 225, 0.12);
+}
+
+.retro-card:hover {
+  border-color: #4169E1;
+  box-shadow: 4px 4px 0px rgba(65, 105, 225, 0.22);
+}
+
+.retro-button-primary {
+  background-color: #4169E1;
+  color: #ffffff;
+  border: 1.5px solid #24345B;
+  box-shadow: 3px 3px 0px #24345B;
+  transition: all 0.15s ease-in-out;
+}
+
+.retro-button-primary:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #24345B;
+}
+
+.retro-button-primary:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #24345B;
+}
+
+.retro-button-pink {
+  background-color: #F4A6C1;
+  color: #24345B;
+  border: 1.5px solid #24345B;
+  box-shadow: 3px 3px 0px #24345B;
+  transition: all 0.15s ease-in-out;
+}
+
+.retro-button-pink:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #24345B;
+}
+
+.retro-button-secondary {
+  background-color: #ffffff;
+  color: #24345B;
+  border: 1.5px solid #A7D8F0;
+  box-shadow: 2px 2px 0px rgba(36, 52, 91, 0.15);
+  transition: all 0.15s ease-in-out;
+}
+
+.retro-button-secondary:hover:not(:disabled) {
+  border-color: #4169E1;
+  background-color: #F4F6FA;
+}
+
+/* Utility to hide scrollbars smoothly */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print optimizations for F4 (Folio 215mm x 330mm) & A4 */
+@media print {
+  @page {
+    size: 215mm 330mm; /* Standar Ukuran Kertas F4 / Folio Sekolah Indonesia */
+    margin: 1.5cm 1.5cm 1.5cm 1.5cm;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .document-sheet {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  section {
+    page-break-inside: auto;
+  }
+  table {
+    page-break-inside: auto;
+    width: 100% !important;
+  }
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  thead {
+    display: table-header-group;
+  }
+}

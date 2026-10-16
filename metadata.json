@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Remix Modul Kokurikuler SMA",
+  "description": "Aplikasi penyusun modul kokurikuler otomatis berbasis AI untuk guru SMA kelas X, XI, dan XII berpedoman pada Panduan Kokurikuler 2025 dan 8 Dimensi Profil Lulusan dengan tema Retro Blue, Pink \u0026 White.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
